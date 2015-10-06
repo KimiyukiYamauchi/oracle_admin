@@ -1,6 +1,15 @@
-#!/bin/bash
-LD_LIBRARY_PATH=/home/yamauchi/oracle/instantclient_12_1
-PATH=/home/yamauchi/oracle/instantclient_12_1:$PATH
+#!/bin/sh
+
+# 各自の環境に合わせて記述
+LD_LIBRARY_PATH=/home/yamauchi/instantclient_12_1
+PATH=/home/yamauchi/instantclient_12_1:$PATH
+
+# 以降は共通
 NLS_LANG=JAPANESE_JAPAN.AL32UTF8
 export LD_LIBRARY_PATH PATH NLS_LANG
-rlwrap sqlplus system/$1@172.16.40.4:1521/db11
+export no_proxy=localhost,172.16.40.4
+stty -echo
+echo -n "パスワード："
+read pass
+stty echo
+rlwrap sqlplus system/$pass@172.16.40.4:1521/db11
