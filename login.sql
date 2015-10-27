@@ -1,10 +1,12 @@
 DEFINE _EDITOR="/usr/bin/vim"
 set null (null)
 set  pages 30
+set linesize 200
 col first_name for a15
 col last_name for a15
 col name for a15
 col empno for 9999
+col mgr for 9999
 col ename for a15
 col yomi for a15
 col job for a15
@@ -20,3 +22,6 @@ col email for a10
 col region for a4
 col dname for a20
 col dish_name for a20
+col salary2 for a10
+col emp for a20
+col 名前 for a20
