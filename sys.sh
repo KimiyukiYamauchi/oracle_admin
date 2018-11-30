@@ -12,4 +12,4 @@ stty -echo
 echo -n "パスワード："
 read pass
 stty echo
-rlwrap sqlplus sys/$pass@192.168.30.4:1521/db11 as sysdba
+rlwrap sqlplus sys/$pass@172.16.40.4:1521/db11 as sysdba
